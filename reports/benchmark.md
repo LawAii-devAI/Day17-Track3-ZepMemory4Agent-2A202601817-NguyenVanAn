@@ -5,22 +5,22 @@
 - Cases: **11**
 - Passed: **11/11**
 - Evidence hit rate: **100.0%**
-- Average retrieval latency: **32.5 ms**
-- Average token reduction vs full source context: **84.1%**
+- Average retrieval latency: **1032.5 ms**
+- Average token reduction vs full source context: **14.2%**
 
 | Case | Layer | Pass | Latency ms | Retrieved tokens | Token reduction | Missing / Error |
 | --- | --- | --- | ---: | ---: | ---: | --- |
 | E01 | short_term | PASS | 0.1 | 133 | 0.0% |  |
-| E06 | semantic | PASS | 42.1 | 85 | 81.5% |  |
-| E09 | long_term | PASS | 38.4 | 42 | 4.5% |  |
-| E10 | short_term | PASS | 0.4 | 195 | 0.0% |  |
-| E02 | long_term | PASS | 35.2 | 36 | 87.1% |  |
-| E03 | long_term | PASS | 37.0 | 40 | 85.7% |  |
-| E04 | episodic | PASS | 48.6 | 58 | 79.3% |  |
-| E05 | episodic | PASS | 46.8 | 52 | 81.4% |  |
-| E07 | mixed | PASS | 55.4 | 120 | 83.8% |  |
-| E11 | semantic | PASS | 40.2 | 62 | 86.5% |  |
-| E08 | long_term | PASS | 38.9 | 45 | 86.8% |  |
+| E06 | semantic | PASS | 814.7 | 148 | 67.8% |  |
+| E09 | long_term | PASS | 1635.9 | 825 | 0.0% |  |
+| E10 | short_term | PASS | 1.0 | 195 | 0.0% |  |
+| E02 | long_term | PASS | 2026.4 | 1451 | 0.0% |  |
+| E03 | long_term | PASS | 1928.0 | 1463 | 0.0% |  |
+| E04 | episodic | PASS | 423.7 | 247 | 0.0% |  |
+| E05 | episodic | PASS | 388.8 | 281 | 0.0% |  |
+| E07 | mixed | PASS | 1907.0 | 485 | 14.2% |  |
+| E11 | semantic | PASS | 298.1 | 146 | 74.2% |  |
+| E08 | long_term | PASS | 1933.7 | 1422 | 0.0% |  |
 
 ## Evidence excerpts
 
@@ -30,40 +30,40 @@
 
 ### E06 - semantic
 
-`Payment Retry Policy: For all POST payment endpoints, requests must include an Idempotency-Key header. Apply exponential-backoff with jitter up to max-3-retries. Reference: PAYMENT-RULE-3.`
+`EPISODE: {"id":"kb-payment-retry","entity":"Payment API Retry Policy","summary":"For POST /payments, every retryable request MUST send the same Idempotency-Key. Retry only HTTP 429 or transient 5xx errors, use exponential-backoff, and stop after max-3-retries. Marker: PAYMENT-RULE-3.","source":"internal-api-guideline-v3","updated_at":"2026-08-10T00:00:00Z"} metadata= EPISODE: For POST /payments, every retryable request MUST send the same Idempotency-Key. Retry only HTTP 429 or transient 5xx errors, use exponential-backoff, and stop after max-3-retries. Marker: PAYMENT-RULE-3. metadata=`
 
 ### E09 - long_term
 
-`User Context for Lan: Preference for LOTUS-88 is Java with Spring Boot.`
+`<USER_SUMMARY> The user's project is LOTUS-88, and they prioritize Java and Spring Boot for backend development.  The user prioritizes Java and Spring Boot for backend development and does not use Python for backend development. </USER_SUMMARY>  <EPISODES> Episodes are source message or document excerpts shown in selection order.   - Created At: 2026-08-01 11:00:20     Source: message     Content: Lab Assistant (assistant): Da hieu: LOTUS-88, Java + Spring Boot cho backend examples.   - Created At: 2026-08-01 11:00:00     Source: message     Content: [user] {   "user_id": "lan-lab17",   "first_name": "Lan",   "last_name": "Tran",   "user_alias": "Lan Tran" }: Toi la Lan. Du an cua toi la LOT`
 
 ### E10 - short_term
 
-`<SESSION_SUMMARY> user: Constraint: REVIEW-DEADLINE-1600 - project review is Friday at 16:00 and must not be forgotten. | assistant: Acknowledged review constraint. | user: Filler turn 1 about UI spacing. | assistant: Filler answer 1. | user: Filler turn 2 about naming. | assistant: Filler answer 2. | user: Filler turn 3 about logging. | assistant: Filler answer 3. </SESSION_SUMMARY> <DURABLE_NOTES> - user: Constraint: REVIEW-DEADLINE-1600 - project review is Friday at 16:00 and must not be forgotten. - assistant: Acknowledged review constraint. </DURABLE_NOTES> <RECENT_TURNS> user: Filler turn 4 about tests. assistant: Filler answer 4. user: Filler turn 5 about docs. assistant: Filler answer 5. user: Filler turn 6 about lint. assistant: Filler answer 6. </RECENT_TURNS>`
+`<SESSION_SUMMARY> user: Constraint: REVIEW-DEADLINE-1600 - project review is Friday at 16:00 and must not be forgotten. | assistant: Acknowledged review constraint. | user: Filler turn 1 about UI spacing. | assistant: Filler answer 1. | user: Filler turn 2 about naming. | assistant: Filler answer 2. | user: Filler turn 3 about logging. | assistant: Filler answer 3. </SESSION_SUMMARY> <DURABLE_NOTES> - user: Constraint: REVIEW-DEADLINE-1600 - project review is Friday at 16:00 and must not be forgotten. - assistant: Acknowledged review constraint. </DURABLE_NOTES> <RECENT_TURNS> user: Filler turn 4 about tests. assistant: Filler answer 4. user: Filler turn 5 about docs. assistant: Filler answe`
 
 ### E02 - long_term
 
-`User Context for Minh: Preferred programming language for personal projects and demos is Python.`
+`<USER_SUMMARY> The user's personal project is named ORCHID-27, for which Python is preferred. For the company project BLUEBIRD-42, the backend must use TypeScript with NestJS. The user is debugging async HTTP requests and identified connection churn as the primary issue related to ASYNC-FIX-20, finding that reusing the aiohttp ClientSession with a concurrency of 20 is effective. The user has a deadline to complete a benchmark report called open loop LAB-REPORT-1600 before Saturday at 16:00.  Minh prefers Python and dislikes Java. When explaining code, Minh wants short examples. Minh is learning async/await and requests explanations on this topic be presented as a timeline. For company projec`
 
 ### E03 - long_term
 
-`Open Loops for Minh: Must finish the benchmark report before Friday at 16:00 (task LAB-REPORT-1600).`
+`<USER_SUMMARY> The user's personal project is named ORCHID-27, for which Python is preferred. For the company project BLUEBIRD-42, the backend must use TypeScript with NestJS. The user is debugging async HTTP requests and identified connection churn as the primary issue related to ASYNC-FIX-20, finding that reusing the aiohttp ClientSession with a concurrency of 20 is effective. The user has a deadline to complete a benchmark report called open loop LAB-REPORT-1600 before Saturday at 16:00.  Minh prefers Python and dislikes Java. When explaining code, Minh wants short examples. Minh is learning async/await and requests explanations on this topic be presented as a timeline. For company projec`
 
 ### E04 - episodic
 
-`Past Incident Trajectory ASYNC-FIX-20: Fixed async HTTP timeout by reusing aiohttp ClientSession with concurrency=20 instead of increasing timeout thresholds.`
+`EPISODE: Ten du an ca nhan cua toi la ORCHID-27. Toi thich Python va khong thich Java. Khi giai thich code, hay dung vi du ngan. EPISODE: Toi dang hoc async/await va hay nham coroutine voi Task. Neu sau nay gap chu de nay, hay giai thich bang timeline. EPISODE: TODO: hoan thanh benchmark report truoc thu Sau luc 16:00. Day la open loop LAB-REPORT-1600. EPISODE: Hom nay toi debug async HTTP. Toi da thu tang timeout len 60s nhung van fail. EPISODE: Cach hieu qua la reuse aiohttp ClientSession va dat concurrency=20. Reflection: loi chinh la connection churn, khong phai timeout threshold. Ma su co ASYNC-FIX-20. EPISODE: Da ghi nhan trajectory: increase timeout khong hieu qua; ClientSession + con`
 
 ### E05 - episodic
 
-`Episode Reflection: The root cause was connection churn from recreating sessions per request; adjusting the timeout threshold did not solve it.`
+`EPISODE: Ten du an ca nhan cua toi la ORCHID-27. Toi thich Python va khong thich Java. Khi giai thich code, hay dung vi du ngan. EPISODE: Toi dang hoc async/await va hay nham coroutine voi Task. Neu sau nay gap chu de nay, hay giai thich bang timeline. EPISODE: TODO: hoan thanh benchmark report truoc thu Sau luc 16:00. Day la open loop LAB-REPORT-1600. EPISODE: Hom nay toi debug async HTTP. Toi da thu tang timeout len 60s nhung van fail. EPISODE: Hay kiem tra connection pool, lifecycle cua client va concurrency. EPISODE: Cach hieu qua la reuse aiohttp ClientSession va dat concurrency=20. Reflection: loi chinh la connection churn, khong phai timeout threshold. Ma su co ASYNC-FIX-20. EPISODE: `
 
 ### E07 - mixed
 
-`<LONG_TERM> User Context for Minh: Preferred programming language is Python. </LONG_TERM>  <SEMANTIC> Payment Retry Policy: For all POST payment endpoints, requests must include an Idempotency-Key header. Apply exponential-backoff with jitter up to max-3-retries. Reference: PAYMENT-RULE-3. </SEMANTIC>`
+`<LONG_TERM> <USER_SUMMARY> The user's personal project is named ORCHID-27, for which Python is preferred. For the company project BLUEBIRD-42, the backend must use TypeScript with NestJS. The user is debugging async HTTP requests and identified connection churn as the primary issue related to ASYNC-FIX-20, finding that reusing the aiohttp ClientSession with a concurrency of 20 is effective. The user has a deadline to complete a benchmark report called open loop LAB-REPORT-1600 before Saturday at 16:00.  Minh prefers Python and dislikes Java. When explaining code, Minh wants short examples. Minh is learning async/await and requests explanations on this topic be presented as a timeline. For co`
 
 ### E11 - semantic
 
-`Incident Playbook (CONN-POOL-FIRST): Before increasing timeout thresholds, always verify connection pooling and reuse of client sessions.`
+`EPISODE: {"id":"kb-async-http","entity":"Async HTTP Incident Playbook","summary":"When async HTTP calls time out, inspect connection pooling, downstream saturation and concurrency before increasing timeout. Reuse a long-lived client session where possible. Marker: CONN-POOL-FIRST.","source":"incident-playbook-2026","updated_at":"2026-08-11T00:00:00Z"} metadata= EPISODE: When async HTTP calls time out, inspect connection pooling, downstream saturation and concurrency before increasing timeout. Reuse a long-lived client session where possible. Marker: CONN-POOL-FIRST. metadata=`
 
 ### E08 - long_term
 
-`User Context (Project Recency): For project BLUEBIRD-42, backend stack is updated to TypeScript and NestJS.`
+`<USER_SUMMARY> The user's personal project is named ORCHID-27, for which Python is preferred. For the company project BLUEBIRD-42, the backend must use TypeScript with NestJS. The user is debugging async HTTP requests and identified connection churn as the primary issue related to ASYNC-FIX-20, finding that reusing the aiohttp ClientSession with a concurrency of 20 is effective. The user has a deadline to complete a benchmark report called open loop LAB-REPORT-1600 before Saturday at 16:00.  Minh prefers Python and dislikes Java. When explaining code, Minh wants short examples. Minh is learning async/await and requests explanations on this topic be presented as a timeline. For company projec`
