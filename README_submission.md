@@ -25,3 +25,17 @@
 
 - **Recency (E08):** Khi Minh cập nhật stack dự án `BLUEBIRD-42` sang `TypeScript` + `NestJS`, Zep ưu tiên fact mới nhất theo phạm vi dự án thay vì sở thích `Python` trước đó.
 - **Compaction (E10):** Cơ chế Sliding Window nén các lượt trò chuyện cũ thành tóm tắt nhưng trích xuất và bảo toàn ràng buộc `REVIEW-DEADLINE-1600` (Thứ Sáu 16:00) vào `DURABLE_NOTES`.
+
+---
+
+## 4. Hình ảnh Minh chứng Kết quả
+
+| Phân loại | Ảnh chụp minh chứng | Mô tả |
+| :--- | :--- | :--- |
+| **Privacy Drill** | ![Privacy Drill](submission/privacy.png) | Lệnh `src.forget` & `--verify-only` chứng minh xóa user PII an toàn |
+| **Long-term Memory** | ![Long-term Memory](submission/long_term.png) | Test case E02, E03, E08, E09 PASS |
+| **Episodic Memory** | ![Episodic Memory](submission/episodic.png) | Test case E04, E05 PASS |
+| **Semantic Memory** | ![Semantic Memory](submission/semantic.png) | Test case E06, E11 PASS |
+| **Full Benchmark** | ![Full Benchmark](submission/benchmark_full.png) | Tổng hợp 11/11 case PASS (100% Hit Rate) |
+| **Demo UI (Bonus)** | ![Demo UI](submission/ui_demo.png) | Giao diện Streamlit tương tác 4 layer và Chatbot |
+

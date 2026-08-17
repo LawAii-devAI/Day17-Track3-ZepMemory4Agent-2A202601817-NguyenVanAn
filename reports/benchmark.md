@@ -5,22 +5,22 @@
 - Cases: **11**
 - Passed: **11/11**
 - Evidence hit rate: **100.0%**
-- Average retrieval latency: **1032.5 ms**
+- Average retrieval latency: **793.7 ms**
 - Average token reduction vs full source context: **14.2%**
 
 | Case | Layer | Pass | Latency ms | Retrieved tokens | Token reduction | Missing / Error |
 | --- | --- | --- | ---: | ---: | ---: | --- |
-| E01 | short_term | PASS | 0.1 | 133 | 0.0% |  |
-| E06 | semantic | PASS | 814.7 | 148 | 67.8% |  |
-| E09 | long_term | PASS | 1635.9 | 825 | 0.0% |  |
-| E10 | short_term | PASS | 1.0 | 195 | 0.0% |  |
-| E02 | long_term | PASS | 2026.4 | 1451 | 0.0% |  |
-| E03 | long_term | PASS | 1928.0 | 1463 | 0.0% |  |
-| E04 | episodic | PASS | 423.7 | 247 | 0.0% |  |
-| E05 | episodic | PASS | 388.8 | 281 | 0.0% |  |
-| E07 | mixed | PASS | 1907.0 | 485 | 14.2% |  |
-| E11 | semantic | PASS | 298.1 | 146 | 74.2% |  |
-| E08 | long_term | PASS | 1933.7 | 1422 | 0.0% |  |
+| E01 | short_term | PASS | 0.0 | 133 | 0.0% |  |
+| E06 | semantic | PASS | 358.9 | 148 | 67.8% |  |
+| E09 | long_term | PASS | 1655.4 | 792 | 0.0% |  |
+| E10 | short_term | PASS | 0.3 | 195 | 0.0% |  |
+| E02 | long_term | PASS | 1584.2 | 1326 | 0.0% |  |
+| E03 | long_term | PASS | 1585.8 | 1334 | 0.0% |  |
+| E04 | episodic | PASS | 213.0 | 233 | 0.0% |  |
+| E05 | episodic | PASS | 496.6 | 252 | 0.0% |  |
+| E07 | mixed | PASS | 1454.0 | 485 | 14.2% |  |
+| E11 | semantic | PASS | 274.0 | 146 | 74.2% |  |
+| E08 | long_term | PASS | 1108.9 | 1308 | 0.0% |  |
 
 ## Evidence excerpts
 
@@ -34,7 +34,7 @@
 
 ### E09 - long_term
 
-`<USER_SUMMARY> The user's project is LOTUS-88, and they prioritize Java and Spring Boot for backend development.  The user prioritizes Java and Spring Boot for backend development and does not use Python for backend development. </USER_SUMMARY>  <EPISODES> Episodes are source message or document excerpts shown in selection order.   - Created At: 2026-08-01 11:00:20     Source: message     Content: Lab Assistant (assistant): Da hieu: LOTUS-88, Java + Spring Boot cho backend examples.   - Created At: 2026-08-01 11:00:00     Source: message     Content: [user] {   "user_id": "lan-lab17",   "first_name": "Lan",   "last_name": "Tran",   "user_alias": "Lan Tran" }: Toi la Lan. Du an cua toi la LOT`
+`<USER_SUMMARY> Lan Tran's project is LOTUS-88. They prioritize Java and Spring Boot for backend examples and do not use Python for the backend. </USER_SUMMARY>  <EPISODES> Episodes are source message or document excerpts shown in selection order.   - Created At: 2026-08-01 11:00:20     Source: message     Content: Lab Assistant (assistant): Da hieu: LOTUS-88, Java + Spring Boot cho backend examples.   - Created At: 2026-08-01 11:00:00     Source: message     Content: [user] {   "user_id": "lan-lab17",   "first_name": "Lan",   "last_name": "Tran",   "user_alias": "Lan Tran" }: Toi la Lan. Du an cua toi la LOTUS-88. Toi uu tien Java va Spring Boot, va khong dung Python trong vi du backend. </E`
 
 ### E10 - short_term
 
@@ -42,23 +42,23 @@
 
 ### E02 - long_term
 
-`<USER_SUMMARY> The user's personal project is named ORCHID-27, for which Python is preferred. For the company project BLUEBIRD-42, the backend must use TypeScript with NestJS. The user is debugging async HTTP requests and identified connection churn as the primary issue related to ASYNC-FIX-20, finding that reusing the aiohttp ClientSession with a concurrency of 20 is effective. The user has a deadline to complete a benchmark report called open loop LAB-REPORT-1600 before Saturday at 16:00.  Minh prefers Python and dislikes Java. When explaining code, Minh wants short examples. Minh is learning async/await and requests explanations on this topic be presented as a timeline. For company projec`
+`<USER_SUMMARY> Minh's personal project is named ORCHID-27. For the company project BLUEBIRD-42, the backend must use TypeScript with NestJS, not Python.  Minh prefers Python for personal demos like ORCHID-27. Minh prefers Python and dislikes Java. When explaining code, Minh wants short examples.  When explanations regarding coroutines and Tasks arise, present them as a timeline. The assistant will prioritize timelines when explaining coroutines and Tasks. When explaining code, Minh wants short examples. </USER_SUMMARY>  <EPISODES> Episodes are source message or document excerpts shown in selection order.   - Created At: 2026-08-01 09:00:00     Source: message     Content: [user] {   "user_id`
 
 ### E03 - long_term
 
-`<USER_SUMMARY> The user's personal project is named ORCHID-27, for which Python is preferred. For the company project BLUEBIRD-42, the backend must use TypeScript with NestJS. The user is debugging async HTTP requests and identified connection churn as the primary issue related to ASYNC-FIX-20, finding that reusing the aiohttp ClientSession with a concurrency of 20 is effective. The user has a deadline to complete a benchmark report called open loop LAB-REPORT-1600 before Saturday at 16:00.  Minh prefers Python and dislikes Java. When explaining code, Minh wants short examples. Minh is learning async/await and requests explanations on this topic be presented as a timeline. For company projec`
+`<USER_SUMMARY> Minh's personal project is named ORCHID-27. For the company project BLUEBIRD-42, the backend must use TypeScript with NestJS, not Python.  Minh prefers Python for personal demos like ORCHID-27. Minh prefers Python and dislikes Java. When explaining code, Minh wants short examples.  When explanations regarding coroutines and Tasks arise, present them as a timeline. The assistant will prioritize timelines when explaining coroutines and Tasks. When explaining code, Minh wants short examples. </USER_SUMMARY>  <EPISODES> Episodes are source message or document excerpts shown in selection order.   - Created At: 2026-08-01 09:04:00     Source: message     Content: [user] {   "user_id`
 
 ### E04 - episodic
 
-`EPISODE: Ten du an ca nhan cua toi la ORCHID-27. Toi thich Python va khong thich Java. Khi giai thich code, hay dung vi du ngan. EPISODE: Toi dang hoc async/await va hay nham coroutine voi Task. Neu sau nay gap chu de nay, hay giai thich bang timeline. EPISODE: TODO: hoan thanh benchmark report truoc thu Sau luc 16:00. Day la open loop LAB-REPORT-1600. EPISODE: Hom nay toi debug async HTTP. Toi da thu tang timeout len 60s nhung van fail. EPISODE: Cach hieu qua la reuse aiohttp ClientSession va dat concurrency=20. Reflection: loi chinh la connection churn, khong phai timeout threshold. Ma su co ASYNC-FIX-20. EPISODE: Da ghi nhan trajectory: increase timeout khong hieu qua; ClientSession + con`
+`EPISODE: Ten du an ca nhan cua toi la ORCHID-27. Toi thich Python va khong thich Java. Khi giai thich code, hay dung vi du ngan. EPISODE: Toi dang hoc async/await va hay nham coroutine voi Task. Neu sau nay gap chu de nay, hay giai thich bang timeline. EPISODE: Da ghi nhan trajectory: increase timeout khong hieu qua; ClientSession + concurrency=20 giai quyet connection churn. EPISODE: Cap nhat moi: voi du an cong ty BLUEBIRD-42, backend bat buoc dung TypeScript voi NestJS; khong dung Python cho backend du an nay. Preference Python van dung cho demo ca nhan ORCHI EPISODE: TODO: hoan thanh benchmark report truoc thu Sau luc 16:00. Day la open loop LAB-REPORT-1600. EPISODE: Hom nay toi debug as`
 
 ### E05 - episodic
 
-`EPISODE: Ten du an ca nhan cua toi la ORCHID-27. Toi thich Python va khong thich Java. Khi giai thich code, hay dung vi du ngan. EPISODE: Toi dang hoc async/await va hay nham coroutine voi Task. Neu sau nay gap chu de nay, hay giai thich bang timeline. EPISODE: TODO: hoan thanh benchmark report truoc thu Sau luc 16:00. Day la open loop LAB-REPORT-1600. EPISODE: Hom nay toi debug async HTTP. Toi da thu tang timeout len 60s nhung van fail. EPISODE: Hay kiem tra connection pool, lifecycle cua client va concurrency. EPISODE: Cach hieu qua la reuse aiohttp ClientSession va dat concurrency=20. Reflection: loi chinh la connection churn, khong phai timeout threshold. Ma su co ASYNC-FIX-20. EPISODE: `
+`EPISODE: Ten du an ca nhan cua toi la ORCHID-27. Toi thich Python va khong thich Java. Khi giai thich code, hay dung vi du ngan. EPISODE: Toi dang hoc async/await va hay nham coroutine voi Task. Neu sau nay gap chu de nay, hay giai thich bang timeline. EPISODE: Da ghi nhan trajectory: increase timeout khong hieu qua; ClientSession + concurrency=20 giai quyet connection churn. EPISODE: Cap nhat moi: voi du an cong ty BLUEBIRD-42, backend bat buoc dung TypeScript voi NestJS; khong dung Python cho backend du an nay. Preference Python van dung cho demo ca nhan ORCHI EPISODE: TODO: hoan thanh benchmark report truoc thu Sau luc 16:00. Day la open loop LAB-REPORT-1600. EPISODE: Hom nay toi debug as`
 
 ### E07 - mixed
 
-`<LONG_TERM> <USER_SUMMARY> The user's personal project is named ORCHID-27, for which Python is preferred. For the company project BLUEBIRD-42, the backend must use TypeScript with NestJS. The user is debugging async HTTP requests and identified connection churn as the primary issue related to ASYNC-FIX-20, finding that reusing the aiohttp ClientSession with a concurrency of 20 is effective. The user has a deadline to complete a benchmark report called open loop LAB-REPORT-1600 before Saturday at 16:00.  Minh prefers Python and dislikes Java. When explaining code, Minh wants short examples. Minh is learning async/await and requests explanations on this topic be presented as a timeline. For co`
+`<LONG_TERM> <USER_SUMMARY> Minh's personal project is named ORCHID-27. For the company project BLUEBIRD-42, the backend must use TypeScript with NestJS, not Python.  Minh prefers Python for personal demos like ORCHID-27. Minh prefers Python and dislikes Java. When explaining code, Minh wants short examples.  When explanations regarding coroutines and Tasks arise, present them as a timeline. The assistant will prioritize timelines when explaining coroutines and Tasks. When explaining code, Minh wants short examples. </USER_SUMMARY>  <EPISODES> Episodes are source message or document excerpts shown in selection order.   - Created At: 2026-08-01 09:00:00     Source: message     Content: [user] `
 
 ### E11 - semantic
 
@@ -66,4 +66,4 @@
 
 ### E08 - long_term
 
-`<USER_SUMMARY> The user's personal project is named ORCHID-27, for which Python is preferred. For the company project BLUEBIRD-42, the backend must use TypeScript with NestJS. The user is debugging async HTTP requests and identified connection churn as the primary issue related to ASYNC-FIX-20, finding that reusing the aiohttp ClientSession with a concurrency of 20 is effective. The user has a deadline to complete a benchmark report called open loop LAB-REPORT-1600 before Saturday at 16:00.  Minh prefers Python and dislikes Java. When explaining code, Minh wants short examples. Minh is learning async/await and requests explanations on this topic be presented as a timeline. For company projec`
+`<USER_SUMMARY> Minh's personal project is named ORCHID-27. For the company project BLUEBIRD-42, the backend must use TypeScript with NestJS, not Python.  Minh prefers Python for personal demos like ORCHID-27. Minh prefers Python and dislikes Java. When explaining code, Minh wants short examples.  When explanations regarding coroutines and Tasks arise, present them as a timeline. The assistant will prioritize timelines when explaining coroutines and Tasks. When explaining code, Minh wants short examples. </USER_SUMMARY>  <EPISODES> Episodes are source message or document excerpts shown in selection order.   - Created At: 2026-08-05 08:00:00     Source: message     Content: [user] {   "user_id`
